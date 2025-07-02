@@ -1,9 +1,12 @@
-import Image from "next/image";
 
-export default function Home() {
-  return (
-    <main>
-      <h1 className="font-bold text-5xl text-center">Calendly app</h1>
-    </main>
-  );
+import LandingPage from "@/LandingPage";
+import { currentUser } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+
+export default async function HomePage() {
+  const user = await currentUser();
+
+  if(!user) return <LandingPage />;
+  return redirect("/events");
+
 }

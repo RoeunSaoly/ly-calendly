@@ -10,7 +10,7 @@ export default function LoginPage() {
           width={100}
           height={100}
         />
-        <div className="mt3">
+        <div className="mt-3">
             <SignIn/>
         </div>
     </main>
